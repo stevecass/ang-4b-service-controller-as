@@ -21,15 +21,32 @@
              <th>Author</th>
              <th>Text</th>
              <th>Created</th>
+             <th>Action</th>
           </thead>
           <tbody>
           <tr ng-repeat="item in data">
             <td class="author">{{item.author}}</td>
             <td class="text">{{item.text}}</td>
             <td class="created_at">{{item.created_at | date:'dd MMM yyyy hh:mm' }}</td>
+            <td class="link"><a href="#" ng-click="showDetail(item)">Details</a></td>
           </tr>
           </tbody>
         </table>
+
+        <h3>Detail view-age kind of </h3>
+
+        <div ng-show="singleItem">
+        ng-bind is an alternative to the mustachioed / handlebar look { { } }
+        <p><a href="#" ng-click="clearDetail()">Clear Detail</a></p>
+          <table>
+           <tr><td>Author</td><td ng-bind="singleItem.author"></td></tr>
+           <tr><td>Text</td><td ng-bind="singleItem.text"></td></tr>
+           <tr><td>When</td><td ng-bind="singleItem.created_at | date: 'dd MMM yyyy hh:mm'"></td>
+
+          </table>
+
+          Whole object: {{singleItem}}
+        </div>
     </div>
 
   </body>
