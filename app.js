@@ -19,4 +19,13 @@ app.controller('SimpleController', ['$scope', 'myService', function($scope, mySe
   myService.loadNotes().then(function(data){
     $scope.data = data;
   });
+
+  $scope.showDetail = function(item) {
+    $scope.singleItem = item;
+  }
+  $scope.clearDetail = function() {
+   $scope.singleItem = null; 
+  }
+
+
 }]);
