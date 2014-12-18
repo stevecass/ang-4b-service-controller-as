@@ -1,3 +1,23 @@
 body {
  font-family: Helvetica, Arial, Sans-serif;
 }
+
+#notes_table, #detail_table {
+  border-collapse: collapse;
+  border: 1px solid gray;
+}
+#notes_table td, #detail_table td {
+  border-top: 1px solid gray;
+  padding: 5px;
+}
+#detail_table td.label {
+  width: 100px;
+}
+#notes_table a {
+  text-decoration: underline;
+  color:blue;
+}
+div.debug {
+  font-family: monospace;
+  padding:20px;
+}

@@ -29,7 +29,7 @@
             <td class="author">{{item.author}}</td>
             <td class="text">{{item.text}}</td>
             <td class="created_at">{{item.created_at | date:'dd MMM yyyy hh:mm' }}</td>
-            <td class="link"><a href="#" ng-click="showDetail(item)">Details</a></td>
+            <td class="link"><a  ng-click="showDetail(item)">Details</a></td>
           </tr>
           </tbody>
         </table>
@@ -39,14 +39,17 @@
         <div ng-show="singleItem">
         ng-bind is an alternative to the mustachioed / handlebar look { { } }
         <p><a href="#" ng-click="clearDetail()">Clear Detail</a></p>
-          <table>
-           <tr><td>Author</td><td ng-bind="singleItem.author"></td></tr>
-           <tr><td>Text</td><td ng-bind="singleItem.text"></td></tr>
-           <tr><td>When</td><td ng-bind="singleItem.created_at | date: 'dd MMM yyyy hh:mm'"></td>
+          <table id="detail_table">
+           <tr><td class="label">Author</td><td ng-bind="singleItem.author"></td></tr>
+           <tr><td class="label">Text</td><td ng-bind="singleItem.text"></td></tr>
+           <tr><td class="label">When</td><td ng-bind="singleItem.created_at | date: 'dd MMM yyyy hh:mm'"></td>
 
           </table>
+          <div>
 
+          <div class="debug">
           Whole object: {{singleItem}}
+          </div>
         </div>
     </div>
 
