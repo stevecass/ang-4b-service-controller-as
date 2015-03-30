@@ -12,7 +12,7 @@ app.factory('myService', ['$http', function($http){
   return service;
 }]);
 
-app.controller('SimpleController', ['$scope', 'myService', function($scope, myService){
+app.controller('SimpleController', ['myService', function(myService){
 
   this.items = ['ABC', 'DEF', 'GHI'];
  
