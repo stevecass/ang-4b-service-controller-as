@@ -14,18 +14,20 @@ app.factory('myService', ['$http', function($http){
 
 app.controller('SimpleController', ['$scope', 'myService', function($scope, myService){
 
-  $scope.items = ['ABC', 'DEF', 'GHI'];
-
+  this.items = ['ABC', 'DEF', 'GHI'];
+ 
+  //note that the callback needs to bind to "this"
   myService.loadNotes().then(function(data){
-    $scope.data = data;
-  });
+    this.data = data;
+  }.bind(this));
 
-  $scope.showDetail = function(item) {
-    $scope.singleItem = item;
-  }
-  $scope.clearDetail = function() {
-   $scope.singleItem = null; 
-  }
+  this.showDetail = function(item) {
+    this.singleItem = item;
+  };
+
+  this.clearDetail = function() {
+   this.singleItem = null; 
+  };
 
 
 }]);
